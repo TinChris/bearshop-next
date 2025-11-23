@@ -1,0 +1,255 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+
+/**
+ * Navigation Komponente - Sticky Navigation mit Glassmorphism
+ * Features:
+ * - Sticky Top Navigation
+ * - Glassmorphism Effekt beim Scrollen
+ * - Responsive Hamburger Menu
+ * - Smooth Scroll zu Sektionen
+ * - Automatisch heller Style auf Unterseiten
+ */
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+  
+  // Auf Unterseiten immer "scrolled" Style verwenden
+  const showScrolledStyle = isScrolled || !isHomePage;
+
+  // Navigation Items
+  const navItems = [
+    { label: 'Home', href: isHomePage ? '#home' : '/' },
+    { label: 'Produkte', href: isHomePage ? '#products' : '/#products' },
+    { label: 'Warum wir', href: isHomePage ? '#why' : '/#why' },
+    { label: 'Kontakt', href: isHomePage ? '#contact' : '/#contact' },
+  ];
+
+  // Scroll Detection für Glassmorphism Effekt
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Smooth Scroll Handler
+  const handleNavClick = (e, href) => {
+    // Wenn wir auf einer Unterseite sind und zu einer Sektion wollen
+    if (!isHomePage && href.startsWith('/#')) {
+      // Normales Link-Verhalten erlauben (zur Hauptseite navigieren)
+      return;
+    }
+    
+    // Auf der Hauptseite: Smooth Scroll
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          showScrolledStyle
+            ? 'glass-strong shadow-2xl py-3'
+            : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="container-custom">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <motion.a
+              href={isHomePage ? '#home' : '/'}
+              onClick={(e) => handleNavClick(e, isHomePage ? '#home' : '/')}
+              className="flex items-center space-x-3 group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                <Image
+                  src="/assets/Bearshop-Baer-150x150.png"
+                  alt="Bearshop Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,1)] transition-all duration-500"
+                />
+              </div>
+              <div className="flex flex-col">
+                <Image
+                  src="/logos/bearshopAt.png"
+                  alt="Bearshop.at"
+                  width={150}
+                  height={40}
+                  className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,1)] transition-all duration-500"
+                />
+                <p
+                  className={`font-bauhaus italic text-sm mt-1 transition-all duration-500 ${
+                    showScrolledStyle
+                      ? 'text-[#DAA520] drop-shadow-[0_0_6px_rgba(218,165,32,0.6)]'
+                      : 'text-[#DAA520] drop-shadow-[0_0_10px_rgba(218,165,32,0.8)]'
+                  }`}
+                >
+                  Deine Geschichte mit Stil
+                </p>
+              </div>
+            </motion.a>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`font-sans font-medium transition-colors duration-500 relative group ${
+                    showScrolledStyle
+                      ? 'text-nightBlue hover:text-gummyRed'
+                      : 'text-white hover:text-gummyOrange drop-shadow-[0_0_6px_rgba(255,180,80,0.8)]'
+                  }`}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 ${
+                      showScrolledStyle ? 'bg-gummyRed' : 'bg-white/70'
+                    } group-hover:w-full`}
+                  ></span>
+                </motion.a>
+              ))}
+
+              {/* CTA Button */}
+              <motion.a
+                href={isHomePage ? '#contact' : '/#contact'}
+                onClick={(e) => handleNavClick(e, isHomePage ? '#contact' : '/#contact')}
+                className="btn-jelly btn-primary"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Anfragen
+              </motion.a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-3 rounded-xl bg-gradient-to-r from-gummyGreen to-gummyBlue text-white shadow-lg hover:shadow-2xl transition-all duration-300"
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 bg-nightBlue/50 backdrop-blur-sm z-40 lg:hidden"
+            />
+
+            {/* Menu */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-candyWhite z-50 lg:hidden shadow-2xl"
+            >
+              <div className="flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gummyBlue/20">
+                  <div className="font-heading font-bold text-2xl text-nightBlue">
+                    Menu
+                  </div>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-xl hover:bg-gummyRed/10 transition-colors"
+                    aria-label="Close Menu"
+                  >
+                    <X size={24} className="text-nightBlue" />
+                  </button>
+                </div>
+
+                {/* Menu Items */}
+                <div className="flex-1 overflow-y-auto p-6">
+                  <div className="space-y-4">
+                    {navItems.map((item, index) => (
+                      <motion.a
+                        key={item.href}
+                        href={item.href}
+                        onClick={(e) => handleNavClick(e, item.href)}
+                        className="block px-4 py-3 rounded-lg font-medium transition-colors duration-200 text-nightBlue hover:bg-gummyBlue/10"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        {item.label}
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer CTA */}
+                <div className="p-6 border-t">
+                  <motion.a
+                    href={isHomePage ? '#contact' : '/#contact'}
+                    onClick={(e) => handleNavClick(e, isHomePage ? '#contact' : '/#contact')}
+                    className="w-full inline-flex items-center justify-center btn-jelly btn-primary"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Anfragen
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navigation;
