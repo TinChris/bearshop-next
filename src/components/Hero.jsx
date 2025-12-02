@@ -398,7 +398,7 @@ const Hero = () => {
             <div className="pt-8 text-white/90">
               <p className="text-sm font-sans mb-2">Vertrauen schenken uns bereits:</p>
               <p className="text-lg font-heading font-semibold">
-                Über 200 zufriedene Kunden österreichweit
+                Über 3500 zufriedene Kunden österreichweit
               </p>
             </div>
           </motion.div>

@@ -122,9 +122,11 @@ const ProductGrid = () => {
                   {product.description}
                 </p>
 
-                {/* Link */}
+                {/* Link - MIT TARGET BLANK FÜR EXTERNE LINKS */}
                 <motion.a
                   href={product.link}
+                  target={product.link.startsWith('http') ? '_blank' : '_self'}
+                  rel={product.link.startsWith('http') ? 'noopener noreferrer' : ''}
                   className="inline-flex items-center gap-2 text-gummyRed font-medium hover:gap-4 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >

@@ -19,11 +19,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navigationLinks = [
-    { label: 'Start', href: '#home' },
-    { label: 'Produkte', href: '#products' },
-    { label: 'Warum wir', href: '#why' },
-    { label: 'Kontakt', href: '#contact' },
-  ];
+  { label: 'Start', href: '/#home' },
+  { label: 'Produkte', href: '/#products' },
+  { label: 'Warum wir', href: '/#why' },
+  { label: 'Kontakt', href: '/#contact' },
+];
+
 
   const legalLinks = [
   { label: 'Impressum', href: '/impressum' },

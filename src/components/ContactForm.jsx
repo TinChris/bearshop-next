@@ -31,12 +31,12 @@ const ContactForm = () => {
 
   // Projektarten für Dropdown
   const projectTypes = [
-    'Schulbekleidung',
-    'Arbeitsbekleidung',
-    'Medizinbekleidung',
-    'Sportbekleidung',
-    'Corporate Fashion',
-    'Sonstiges',
+    'Textildruck & Bekleidung',
+  'Geschäftsausstattung & Bürobedarf',
+  'Werbemittel & Give-Aways',
+  'Verpackung & Etiketten',
+  'Außenwerbung & Fahrzeugbeschriftung',
+  'Sonstiges',
   ];
 
   // Handle input changes
@@ -93,23 +93,42 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ type: '', message: '' });
+// Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus({ type: '', message: '' });
 
-    if (!validateForm()) {
-      return;
-    }
+  if (!validateForm()) {
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const response = await apiRequest(API_ENDPOINTS.contact, formData);
+  try {
+    // FormSubmit senden
+    const form = e.target;
+    const response = await fetch('https://formsubmit.co/webshop@bearshop.at', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        projectType: formData.projectType,
+        message: formData.message,
+        _subject: `Neue Anfrage von ${formData.name}`,
+        _captcha: 'false',
+        _template: 'table'
+      })
+    });
 
+    if (response.ok) {
       setStatus({
         type: 'success',
-        message: response.message || 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.',
+        message: 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.',
       });
 
       // Reset form
@@ -120,15 +139,18 @@ const ContactForm = () => {
         projectType: '',
         message: '',
       });
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: error.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.',
-      });
-    } finally {
-      setLoading(false);
+    } else {
+      throw new Error('Fehler beim Senden');
     }
-  };
+  } catch (error) {
+    setStatus({
+      type: 'error',
+      message: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.',
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section id="contact" className="section bg-candyWhite">
