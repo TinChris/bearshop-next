@@ -44,7 +44,7 @@ const WhyBearshop = () => {
   ];
 
   return (
-    <section id="why" className="section bg-jelly-gradient-soft">
+    <section id="why" className="section" style={{ background: 'linear-gradient(135deg, #FBF5EF 0%, rgba(120, 184, 51, 0.1) 50%, #FBF5EF 100%)' }}>
       <div className="container-custom">
         {/* Überschrift */}
         <motion.div

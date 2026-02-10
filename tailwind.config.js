@@ -8,21 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-              // Hauptfarben - Grün & Blau
-              brandGreen: '#6bb536',      // Hauptfarbe
-              brandBlue: '#214b96',       // Sekundärfarbe
-              brandGold: '#DAA520',       // Nur für Logo & CTA
-              
-              // Alte Gummy-Farben für Kompatibilität (mapped zu neuen Farben)
-              gummyGreen: '#6bb536',      // Hauptfarbe
-              gummyBlue: '#214b96',       // Sekundärfarbe
-              gummyRed: '#6bb536',        // → Grün
-              gummyOrange: '#6bb536',     // → Grün
-              gummyYellow: '#DAA520',     // Gold
-              gummyPurple: '#214b96',     // → Blau
-              
+              // Brand Colors
+              brandGreen: '#78B833',
+              brandBlue: '#2E4185',
+              brandRed: '#D93742',
+              brandLightBlue: '#D0ECE7',
+              brandBeige: '#FBF5EF',
+              brandGold: '#DAA520',
+
+              // Aliases für Kompatibilität
+              gummyGreen: '#78B833',
+              gummyBlue: '#2E4185',
+              gummyRed: '#D93742',
+              gummyOrange: '#78B833',
+              gummyYellow: '#DAA520',
+              gummyPurple: '#2E4185',
+
               // Backgrounds
-              candyWhite: '#FFF8F0',
+              candyWhite: '#FBF5EF',
               nightBlue: '#1E2A38',
             },
       fontFamily: {

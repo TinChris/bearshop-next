@@ -32,6 +32,7 @@ const ContactForm = () => {
   // Projektarten für Dropdown
   const projectTypes = [
     'Textildruck & Bekleidung',
+  'Schulwebshop',
   'Geschäftsausstattung & Bürobedarf',
   'Werbemittel & Give-Aways',
   'Verpackung & Etiketten',
@@ -369,7 +370,7 @@ const handleSubmit = async (e) => {
 
               {/* Adresse */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gummyGreen to-gummyBlue flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-brandGreen flex items-center justify-center flex-shrink-0">
                   <MapPin size={24} className="text-white" />
                 </div>
                 <div>
@@ -386,7 +387,7 @@ const handleSubmit = async (e) => {
 
               {/* E-Mail */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gummyBlue flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-brandBlue flex items-center justify-center flex-shrink-0">
                   <Mail size={24} className="text-white" />
                 </div>
                 <div>
@@ -404,7 +405,7 @@ const handleSubmit = async (e) => {
 
               {/* Telefon */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gummyGreen flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-brandGreen flex items-center justify-center flex-shrink-0">
                   <Phone size={24} className="text-white" />
                 </div>
                 <div>
@@ -422,9 +423,9 @@ const handleSubmit = async (e) => {
 
               {/* Öffnungszeiten */}
               <div className="flex items-start gap-4">
-                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gummyGreen to-gummyBlue flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-brandBlue flex items-center justify-center flex-shrink-0">
                   <Clock size={24} className="text-white" />
-              </div>
+                </div>
                 <div>
                   <h4 className="font-heading font-semibold text-lg text-nightBlue mb-1">
                     Öffnungszeiten
@@ -440,7 +441,8 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Zusätzliche Info */}
-            <div className="bg-gradient-to-br from-gummyGreen to-gummyBlue rounded-3xl p-8 text-white">
+            <div className="rounded-3xl p-8 text-white" style={{ background: 'conic-gradient(from 220deg at 80% 40%, #78B833, #213B05, #78B833)' }}
+>
               <h4 className="font-heading font-semibold text-xl mb-3">
                 Schnelle Rückmeldung garantiert
               </h4>

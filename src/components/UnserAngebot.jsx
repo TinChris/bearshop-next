@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GraduationCap, Wrench, Stethoscope, Dumbbell, Briefcase } from 'lucide-react';
+import { GraduationCap, Wrench, Stethoscope, Dumbbell, Printer } from 'lucide-react';
 
 /**
  * Unser Angebot - 5 Produktkategorien
@@ -16,32 +16,32 @@ const UnserAngebot = () => {
     {
       icon: GraduationCap,
       title: 'Schulbekleidung',
-      color: 'gummyRed',
-    },
-    {
-      icon: Wrench,
-      title: 'Arbeitsbekleidung',
-      color: 'gummyOrange',
-    },
-    {
-      icon: Stethoscope,
-      title: 'Medizinbekleidung',
-      color: 'gummyYellow',
+      bgColor: '#D93742',
     },
     {
       icon: Dumbbell,
       title: 'Sportbekleidung',
-      color: 'gummyGreen',
+      bgColor: '#78B833',
     },
     {
-      icon: Briefcase,
-      title: 'Corporate Fashion',
-      color: 'gummyBlue',
+      icon: Wrench,
+      title: 'Arbeitsbekleidung',
+      bgColor: '#2E4185',
+    },
+    {
+      icon: Stethoscope,
+      title: 'Medizinbekleidung',
+      bgColor: '#D0ECE7',
+    },
+    {
+      icon: Printer,
+      title: 'Druckprodukte',
+      bgColor: '#78B833',
     },
   ];
 
   return (
-    <section className="section bg-candyWhite">
+    <section className="section bg-brandBeige">
       <div className="container-custom">
         {/* Überschrift */}
         <motion.div
@@ -77,9 +77,10 @@ const UnserAngebot = () => {
               >
                 {/* Icon */}
                 <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg mb-4 bg-gradient-to-br from-gummyGreen to-gummyBlue"
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg mb-4"
+                  style={{ backgroundColor: category.bgColor }}
                 >
-                  <category.icon size={40} className="text-white" />
+                  <category.icon size={40} className={category.bgColor === '#D0ECE7' ? 'text-nightBlue' : 'text-white'} />
                 </div>
 
                 {/* Titel */}

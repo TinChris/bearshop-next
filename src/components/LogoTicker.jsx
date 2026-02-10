@@ -17,7 +17,7 @@ const LogoTicker = () => {
   const row2Logos = [...customers.slice().reverse(), ...customers.slice().reverse(), ...customers.slice().reverse()];
 
   return (
-    <section className="section bg-candyWhite py-16">
+    <section className="section bg-brandBeige py-16">
       <div className="container-custom">
         {/* Überschrift */}
         <motion.div

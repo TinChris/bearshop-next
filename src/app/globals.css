@@ -5,7 +5,7 @@
 /* Jelly Design System Base Styles */
 body {
   font-family: 'century gothic', system-ui, sans-serif;
-  background-color: #FFF8F0;
+  background-color: #FBF5EF;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,13 +14,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === CSS VARIABLES === */
 :root {
-  /* Brand Colors - Grün & Blau */
-  --brand-green: #6bb536;
-  --brand-blue: #214b96;
+  /* Brand Colors */
+  --brand-green: #78B833;
+  --brand-blue: #2E4185;
+  --brand-red: #D93742;
+  --brand-light-blue: #D0ECE7;
+  --brand-beige: #FBF5EF;
   --brand-gold: #DAA520;
-  
+
   /* Background Colors */
-  --candy-white: #FFF8F0;
+  --candy-white: #FBF5EF;
   --night-blue: #1E2A38;
 }
 
@@ -46,15 +49,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === GRADIENTS === */
 .bg-jelly-gradient {
-  background: linear-gradient(135deg, #6bb536 0%, #214b96 100%);
+  background: linear-gradient(135deg, #78B833 0%, #2E4185 100%);
 }
 
 .bg-jelly-gradient-soft {
-  background: linear-gradient(135deg, #FFF8F0 0%, rgba(107, 181, 54, 0.1) 50%, #FFF8F0 100%);
+  background: linear-gradient(135deg, #FBF5EF 0%, rgba(120, 184, 51, 0.1) 50%, #FBF5EF 100%);
 }
 
 .bg-hero-gradient {
-  background: linear-gradient(135deg, #6bb536 0%, #214b96 100%);
+  background: linear-gradient(135deg, #78B833 0%, #2E4185 100%);
 }
 
 .bg-hero-soft {
@@ -63,14 +66,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === GLASSMORPHISM === */
 .glass {
-  background: rgba(255, 248, 240, 0.7);
+  background: rgba(251, 245, 239, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .glass-strong {
-  background: rgba(255, 248, 240, 0.9);
+  background: rgba(251, 245, 239, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.4);

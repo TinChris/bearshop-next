@@ -22,6 +22,7 @@ const Footer = () => {
   { label: 'Start', href: '/#home' },
   { label: 'Produkte', href: '/#products' },
   { label: 'Warum wir', href: '/#why' },
+  { label: 'Schul-Webshop', href: '/schul-webshop' },
   { label: 'Kontakt', href: '/#contact' },
 ];
 
@@ -50,28 +51,14 @@ const Footer = () => {
             viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 1.0, ease: "easeOut" }}
           >
-            <div className="flex items-start space-x-3 mb-2">
-              <div className="flex items-center justify-center flex-shrink-0">
-                <Image
-                  src="/assets/Bearshop-Baer-150x150.png"
-                  alt="Bearshop Logo"
-                  width={48}
-                  height={48}
-                  className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)]"
-                />
-              </div>
-              <div className="flex flex-col">
+            <div className="mb-2">
               <Image
-                src="/logos/bearshopAt.png"
+                src="/logos/bearshop_white_500_125.svg"
                 alt="Bearshop.at"
-                width={150}
-                height={40}
-                className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)]"
+                width={200}
+                height={50}
+                className="object-contain"
               />
-              <p className="font-bauhaus italic text-sm text-[#DAA520] mt-1 drop-shadow-[0_0_6px_rgba(218,165,32,0.6)]">
-                Deine Geschichte mit Stil
-              </p>
-            </div>
             </div>
             <p className="font-sans text-sm text-candyWhite/70 leading-relaxed">
               Hochwertiger Textildruck & Merchandise für Schulen, Vereine und Unternehmen.

@@ -15,7 +15,7 @@ const PhilosophyBanner = () => {
   return (
     <section className="relative py-16 overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-candyWhite via-gummyYellow/20 to-candyWhite"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-brandBeige via-brandGreen/10 to-brandBeige"></div>
 
       {/* Content */}
       <div className="container-custom relative z-10">

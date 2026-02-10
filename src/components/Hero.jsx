@@ -52,9 +52,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
       </div>
 
+
       {/* Floating Bearshop Bären Background - Nur auf Desktop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
-        {/* Bär 1 - Neon Grün */}
+        {/* Bär 1 */}
         <motion.div
           className="absolute top-40 left-40 opacity-30"
           animate={{
@@ -75,12 +76,11 @@ const Hero = () => {
             height={160}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 2 - Neon Grün */}
+        {/* Bär 2 */}
         <motion.div
           className="absolute top-40 right-20 opacity-30"
           animate={{
@@ -102,12 +102,11 @@ const Hero = () => {
             height={128}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 3 - Neon Grün */}
+        {/* Bär 3 */}
         <motion.div
           className="absolute bottom-32 left-1/4 opacity-30"
           animate={{
@@ -129,12 +128,11 @@ const Hero = () => {
             height={144}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 4 - Neon Grün */}
+        {/* Bär 4 */}
         <motion.div
           className="absolute bottom-20 right-1/3 opacity-30"
           animate={{
@@ -156,12 +154,11 @@ const Hero = () => {
             height={112}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 5 - Neon Grün */}
+        {/* Bär 5 */}
         <motion.div
           className="absolute top-1/3 right-10 opacity-30"
           animate={{
@@ -183,12 +180,11 @@ const Hero = () => {
             height={136}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 6 - Neon Grün */}
+        {/* Bär 6 */}
         <motion.div
           className="absolute top-1/2 left-10 opacity-30"
           animate={{
@@ -210,12 +206,11 @@ const Hero = () => {
             height={120}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
 
-        {/* Bär 7 - Neon Grün */}
+        {/* Bär 7 */}
         <motion.div
           className="absolute top-2/3 right-1/4 opacity-30"
           animate={{
@@ -237,7 +232,6 @@ const Hero = () => {
             height={96}
             style={{
               filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
-              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
             }}
           />
         </motion.div>
@@ -282,7 +276,7 @@ const Hero = () => {
           >
             <motion.a
               href="#contact"
-              className="btn-jelly bg-[#DAA520] text-white hover:bg-[#DAA520]/90 shadow-[0_0_30px_rgba(218,165,32,0.6)] animate-pulse-glow"
+              className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-lg"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -386,7 +380,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
               <motion.a
                 href="#contact"
-                className="btn-jelly bg-[#DAA520] text-white hover:bg-[#DAA520]/90 shadow-[0_0_30px_rgba(218,165,32,0.6)] animate-pulse-glow"
+                className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >

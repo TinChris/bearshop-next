@@ -18,17 +18,16 @@ const ProductGrid = () => {
   // Mapping von Produkt-IDs zu Bildern
   const productImages = {
     1: '/assets/T-shirt_900x1200px.png',           // T-Shirts
-    2: '/assets/Hoodie_mainpic_900x1200px.png',    // Hoodies & Pullover
-    3: '/assets/Werbemittel_900 x1200 px.png',     // Werbung & Events
-    4: '/assets/Business_tools_900 x1200 px.png',  // Geschäftsausstattung
-    5: '/assets/Verpackungl_900 x1200 px.png',     // Verpackung & Etiketten
+    2: '/assets/Hoodie_mainpic_900x1200px.png',    // Hoodies
+    3: '/assets/Werbemittel_900 x1200 px.png',     // Werbemittel
+    4: '/assets/Business_tools_900 x1200 px.png',  // Brand-Set
     6: '/assets/Plane_900 x1200 px.png',           // Außenwerbung
   };
 
   const hoverImage = '/assets/DeinLogo_DeinStil.jpg';
 
   return (
-    <section id="products" className="section bg-jelly-gradient-soft">
+    <section id="products" className="section bg-brandBeige">
       <div className="container-custom">
         {/* Überschrift */}
         <motion.div

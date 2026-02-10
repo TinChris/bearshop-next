@@ -85,37 +85,17 @@ const Navigation = () => {
             <motion.a
               href={isHomePage ? '#home' : '/'}
               onClick={(e) => handleNavClick(e, isHomePage ? '#home' : '/')}
-              className="flex items-center space-x-3 group"
+              className="flex items-center group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                <Image
-                  src="/assets/Bearshop-Baer-150x150.png"
-                  alt="Bearshop Logo"
-                  width={48}
-                  height={48}
-                  className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,1)] transition-all duration-500"
-                />
-              </div>
-              <div className="flex flex-col">
-                <Image
-                  src="/logos/bearshopAt.png"
-                  alt="Bearshop.at"
-                  width={150}
-                  height={40}
-                  className="object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,1)] transition-all duration-500"
-                />
-                <p
-                  className={`font-bauhaus italic text-sm mt-1 transition-all duration-500 ${
-                    showScrolledStyle
-                      ? 'text-[#DAA520] drop-shadow-[0_0_6px_rgba(218,165,32,0.6)]'
-                      : 'text-[#DAA520] drop-shadow-[0_0_10px_rgba(218,165,32,0.8)]'
-                  }`}
-                >
-                  Deine Geschichte mit Stil
-                </p>
-              </div>
+              <Image
+                src={showScrolledStyle ? '/logos/bearshop_black_500_125.svg' : '/logos/bearshop_white_500_125.svg'}
+                alt="Bearshop.at"
+                width={200}
+                height={50}
+                className="object-contain transition-all duration-500"
+              />
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -162,7 +142,8 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-3 rounded-xl bg-gradient-to-r from-gummyGreen to-gummyBlue text-white shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="lg:hidden p-3 rounded-xl text-white shadow-lg hover:shadow-2xl transition-all duration-300"
+              style={{ background: 'radial-gradient(circle, #78B833 30%, #213B05 110%)' }}
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle Menu"
             >
