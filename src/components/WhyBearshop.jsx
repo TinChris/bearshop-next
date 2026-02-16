@@ -83,7 +83,7 @@ const WhyBearshop = () => {
               </div>
 
               {/* Titel */}
-              <h3 className="font-jost font-semibold text-2xl text-nightBlue mb-4">
+              <h3 className="font-heading font-semibold text-2xl text-nightBlue mb-4">
                 {reason.title}
               </h3>
 

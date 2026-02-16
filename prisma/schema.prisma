@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model NewsletterSubscription {
+  id                   String    @id @default(uuid())
+  email                String    @unique
+  status               String    @default("PENDING") // PENDING | CONFIRMED | UNSUBSCRIBED
+  tokenHash            String?   @map("token_hash")
+  tokenExpiresAt       DateTime? @map("token_expires_at")
+  submittedAt          DateTime  @default(now()) @map("submitted_at")
+  confirmedAt          DateTime? @map("confirmed_at")
+  unsubscribedAt       DateTime? @map("unsubscribed_at")
+  source               String?
+  privacyPolicyVersion String    @map("privacy_policy_version")
+  userAgent            String?   @map("user_agent")
+  ipHash               String?   @map("ip_hash")
+  lastSentAt           DateTime? @map("last_sent_at")
+
+  @@map("newsletter_subscriptions")
+}

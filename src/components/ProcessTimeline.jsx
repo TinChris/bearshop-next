@@ -84,19 +84,6 @@ const ProcessTimeline = () => {
     },
   };
 
-  const badgeVariants = {
-    hidden: { scale: 0.6, opacity: 0 },
-    show: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: 0.15,
-        duration: 0.55,
-        ease,
-      },
-    },
-  };
-
   // Progressline: 0% -> 33% -> 66% -> 100%
   const progressVariants = {
     hidden: { width: '0%' },
@@ -120,7 +107,7 @@ const ProcessTimeline = () => {
   };
 
   return (
-    <section className="section bg-green-gradient-soft">
+    <section className="section bg-jelly-gradient-soft">
       <div className="container-custom">
         {/* Überschrift */}
         <motion.div

@@ -2,7 +2,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Gift, Package, Award, Shirt, Coffee, ShoppingBag, Sparkles, Zap, Users, PartyPopper } from 'lucide-react';
 
 export const metadata = {
@@ -17,7 +16,6 @@ export default function Werbemittel() {
       
       {/* Hero Section */}
 <section className="relative pt-32 pb-20 bg-gradient-to-br from-candyWhite via-candyWhite to-brandGreen overflow-hidden">
-        <div className="container-custom"></div>
   <div className="container-custom">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Left - Text */}

@@ -29,9 +29,9 @@ module.exports = {
               nightBlue: '#1E2A38',
             },
       fontFamily: {
-        heading: ['Poppins', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'serif'],
+        heading: ['century gothic', 'system-ui', 'sans-serif'],
+        sans: ['Clear Sans', 'system-ui', 'sans-serif'],
+        serif: ['Clear Sans', 'Georgia', 'serif'],
       },
     },
   },

@@ -6,7 +6,7 @@ import ProductGrid from '@/components/ProductGrid';
 import WhyBearshop from '@/components/WhyBearshop';
 import UnserAngebot from '@/components/UnserAngebot';
 import ProcessTimeline from '@/components/ProcessTimeline';
-import Testimonials from '@/components/Testimonials';
+
 import CTABanner from '@/components/CTABanner';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';

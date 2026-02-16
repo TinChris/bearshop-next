@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Check } from 'lucide-react';
-import { API_ENDPOINTS, apiRequest } from '../config/api';
+
 
 /**
  * ContactForm - 2-Spalten Kontaktformular
@@ -107,7 +107,6 @@ const handleSubmit = async (e) => {
 
   try {
     // FormSubmit senden
-    const form = e.target;
     const response = await fetch('https://formsubmit.co/webshop@bearshop.at', {
       method: 'POST',
       headers: {

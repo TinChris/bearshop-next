@@ -294,7 +294,7 @@ const Hero = () => {
           >
             <p className="text-sm font-sans mb-1">Vertrauen schenken uns bereits:</p>
             <p className="text-lg font-heading font-semibold">
-              Über 200 zufriedene Kunden österreichweit
+              Über 3500 zufriedene Kunden österreichweit
             </p>
           </motion.div>
         </div>
