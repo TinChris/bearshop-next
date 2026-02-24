@@ -17,14 +17,22 @@ import Image from 'next/image';
 const ProductGrid = () => {
   // Mapping von Produkt-IDs zu Bildern
   const productImages = {
-    1: '/assets/T-shirt_900x1200px.png',           // T-Shirts
-    2: '/assets/Hoodie_mainpic_900x1200px.png',    // Hoodies
-    3: '/assets/Werbemittel_900 x1200 px.png',     // Werbemittel
-    4: '/assets/Business_tools_900 x1200 px.png',  // Brand-Set
-    6: '/assets/Plane_900 x1200 px.png',           // Außenwerbung
+    7: '/assets/schul-webshop-bearshop.webp',              // Schul-Webshop
+    1: '/assets/T-shirt_900x1200px.webp',                  // T-Shirts
+    2: '/assets/Hoodie_mainpic_900x1200px.webp',           // Hoodies
+    3: '/assets/Werbemittel_900 x1200 px.webp',            // Werbemittel
+    4: '/assets/Business_tools_900 x1200 px.webp',         // Brand-Set
+    6: '/assets/Plane_900 x1200 px.webp',                  // Außenwerbung
   };
 
-  const hoverImage = '/assets/DeinLogo_DeinStil.jpg';
+  const hoverImages = {
+    7: '/assets/schul-webshop-bearshop2.webp',             // Schul-Webshop
+    1: '/assets/t-shirt-bearshop.webp',                    // T-Shirts
+    2: '/assets/DeinLogo_DeinStil.webp',                   // Hoodies
+    3: '/assets/werbemittel.webp',                         // Werbemittel
+    4: '/assets/brand-set.webp',                           // Brand-Set
+    6: '/assets/Aussenwerbung.webp',                       // Außenwerbung
+  };
 
   return (
     <section id="products" className="section bg-brandBeige">
@@ -50,6 +58,7 @@ const ProductGrid = () => {
           {products.map((product, index) => {
             const IconComponent = Icons[product.icon];
             const productImage = productImages[product.id];
+            const hoverImage = hoverImages[product.id];
 
             return (
               <motion.div

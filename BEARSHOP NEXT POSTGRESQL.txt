@@ -1,0 +1,17 @@
+BEARSHOP-NEXT POSTGRESQL - V14.5
+
+Ziel: newsletter opt-in zu sichern
+
+
+PG_HOST=
+PG_PORT=
+PG_DATABASE=bearshop-webpage
+PG_USER=postgres
+PG_PASSWORD=55329505d62241a8
+
+Postgres is deployed and available as 
+srv-captain--bearshop-webpage:5432 
+to other apps.
+
+For example with Node.js: 
+const client = new Client({ user: 'postgres', host: 'srv-captain--bearshop-webpage', database: 'postgres', password: '55329505d62241a8', port: 5432})
